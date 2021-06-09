@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "CreateHistoria";
+}
+
+<h1>CreateHistoria</h1>
+
+<form action="/Usuario/CreateHistoria" method="post">
+    <label>Mascota: </label>
+    <select name="idMascota">
+        @foreach (var x in ViewBag.Mascotas)
+        {
+        <option value=@x.idMascota>@x.nombre - @x.raza</option>
+        }
+    </select>
+    <br /><br />
+    <button type="submit">Ok</button>
+</form>

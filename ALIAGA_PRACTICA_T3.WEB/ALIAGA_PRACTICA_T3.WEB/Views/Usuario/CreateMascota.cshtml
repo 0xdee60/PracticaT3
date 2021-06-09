@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "CreateMascota";
+}
+
+<h1>CreateMascota</h1>
+
+<form action="/Usuario/CreateMascota" method="post">
+    <label>Fecha de nacimiento: </label>
+    <input name="fechaNac" type="date" />
+    <br />
+    <label>Sexo </label>
+    <select name="sexo">
+        <option>--genero--</option>
+        <option value="Macho">MACHO</option>
+        <option value="Hembra">HEMBRA</option>
+    </select>
+    <br />
+    <label>Especie: </label>
+    <select name="especie">
+        <option>--especie--</option>
+        <option value="Pez">Mamifero</option>
+        <option value="Reptil">Reptil</option>
+        <option value="Ave">Ave</option>
+        <option value="Perro">Perro</option>
+        <option value="Gato">Gato</option>
+    </select>
+    <br />
+    <label>Raza: </label>
+    <input name="raza" type="text" />
+    <br />
+    <label>Tamaño: </label>
+    <input name="tamanio" type="text" />
+    <br />
+    <label>Particularidades: </label>
+    <textarea name="particularidades"></textarea>
+    <br />
+    <label>Nombre: </label>
+    <input name="nombre" type="text"/>
+    <br />
+    <button type="submit">Ok</button>
+    <br />
+</form>

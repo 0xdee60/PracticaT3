@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a href="/Usuario/Mascotas">Mascotas</a>
+
+<br />
+<br />
+<a href="/Usuario/CreateHistoria">Agregar historia</a>
+<br />
+@if (ViewBag.Usuario.historias.Count != 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo de registro</th>
+                <th>Fecha de registro</th>
+                <th>Nombre</th>
+                <th>Fecha de nacimiento</th>
+                <th>Sexo</th>
+                <th>Especie</th>
+                <th>Raza</th>
+                <th>Tamanio</th>
+                <th>Particularidades</th>
+                <th>Dueño</th>
+                <th>Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var x in ViewBag.Usuario.historias)
+            {
+                <tr>
+                    <td>@x.codigo</td>
+                    <td>@x.fechaRegistro</td>
+                    <td>@x.mascota.nombre</td>
+                    <td>@x.mascota.fechaNac</td>
+                    <td>@x.mascota.sexo</td>
+                    <td>@x.mascota.especie</td>
+                    <td>@x.mascota.raza</td>
+                    <td>@x.mascota.tamanio</td>
+                    <td>@x.mascota.particularidades</td>
+
+                    <td>@ViewBag.Usuario.nombres</td>
+                    <td>@ViewBag.Usuario.direccion</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>Aun no cuenta con citas registradas</h2>
+}

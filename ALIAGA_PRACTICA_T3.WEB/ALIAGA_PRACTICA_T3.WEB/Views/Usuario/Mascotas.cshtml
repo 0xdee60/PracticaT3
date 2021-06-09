@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Mascotas";
+}
+
+<h1>Mascotas</h1>
+<a href="/Usuario/CreateMascota">Crear mascota</a>
+<br />
+@if (ViewBag.Mascotas.Count != 0) {
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha de nacimiento</th>
+                <th>Sexo</th>
+                <th>Especie</th>
+                <th>Raza</th>
+                <th>Tamanio</th>
+                <th>Particularidades</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach(var i in ViewBag.Mascotas)
+            { 
+                <tr>
+                    <td>@i.nombre</td>
+                    <td>@i.fechaNac</td>
+                    <td>@i.sexo</td>
+                    <td>@i.especie</td>
+                    <td>@i.raza</td>
+                    <td>@i.tamanio</td>
+                    <td>@i.particularidades</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+            }
+            else
+            {
+                <h2>Aun no cuenta con mascotas registradas</h2>
+            }
+
